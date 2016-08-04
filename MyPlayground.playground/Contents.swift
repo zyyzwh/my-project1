@@ -1,50 +1,31 @@
-//: Playground - noun: a place where people can play
-
 import UIKit
+//
+//
+//let thisissunday=false
+//
+//let rect=CGRect(x:0,y:0,width:100,height:100)
+//let view=UIView(frame: CGRect(x: 0, y:0, width:100, height: 0))
+//view.backgroundColor=UIColor.redColor()
+//let isMonday=true
+//let isSunday=true
+//if isSunday && isMonday
+//{print("Go")}
+//if isMonday||isSunday{}
+//let  qwe="just do it"
+//for character in qwe.characters{print(character)}
+//for i in 1...100{}
+//var sum=0
+//for i in 1.stride(to: 100, by:2)
+//{
+//sum+=i
+//}
+//print(sum)
+//let fibo=[1,2,3,5,8,13]
+//fibo[0]
+//func caculateSum(number1:Int,number2:Int,number3:Int)->
+//    Int{return number1+number2+number3
+//}
+//caculateSum(100, number2:100,number3:100)
+let ddarray=[[1,2,3],[2,3],[3,3]]
 
-var str = "Hello, playground"
-print(str)
 
-var a:Int
-a=5
-
-print(a)
- let b=6
-a=5
-//b=6
-if a>6
-{
-
-    print("a>6")
-}else
-{
-    print("a<=6")
-}
-var sum:Int=0
-for var i=0;i<10;i=i+1
-    {sum+=i}
-print(sum)
-var n:Int
-var arr=[1,2,3]
-print(arr[1])
-
-arr.append (4)
-
-
-var brr=[31,16,28,5,15,21,2]
-var  temp=0
-for var i=0;i<brr.count-1;i=i+1
-{
-    for var j=0;j<brr.count-1-i;j=j+1
-    {
-    if(brr[j]>brr[j+1])
-    {
-    temp=brr[j]
-    brr[j]=brr[j+1]
-    brr[j+1]=temp
-    }
-    }
-}
-print(brr)
-for var i=0;i<brr.count; i=i+1
-{print(brr[i],",",terminator:"")}
