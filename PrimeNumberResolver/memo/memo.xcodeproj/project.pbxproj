@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E1EB82031D521DDC009C3872 /* memolist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EB82021D521DDC009C3872 /* memolist.swift */; };
+		E1EBE0D21D535BD800CF8381 /* memoDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBE0D11D535BD800CF8381 /* memoDetailTableViewController.swift */; };
 		E1EE9F3F1D50C85B00684C27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE9F3E1D50C85B00684C27 /* AppDelegate.swift */; };
 		E1EE9F411D50C85B00684C27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE9F401D50C85B00684C27 /* ViewController.swift */; };
 		E1EE9F441D50C85B00684C27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EE9F421D50C85B00684C27 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 		E1EE9F491D50C85B00684C27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EE9F471D50C85B00684C27 /* LaunchScreen.storyboard */; };
 		E1EE9F541D50C85B00684C27 /* memoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE9F531D50C85B00684C27 /* memoTests.swift */; };
 		E1EE9F5F1D50C85B00684C27 /* memoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE9F5E1D50C85B00684C27 /* memoUITests.swift */; };
+		E1F5B7831D557B4200284740 /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5B7821D557B4200284740 /* addViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		E1EB82021D521DDC009C3872 /* memolist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memolist.swift; sourceTree = "<group>"; };
+		E1EBE0D11D535BD800CF8381 /* memoDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memoDetailTableViewController.swift; sourceTree = "<group>"; };
 		E1EE9F3B1D50C85B00684C27 /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EE9F3E1D50C85B00684C27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1EE9F401D50C85B00684C27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		E1EE9F5A1D50C85B00684C27 /* memoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = memoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EE9F5E1D50C85B00684C27 /* memoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memoUITests.swift; sourceTree = "<group>"; };
 		E1EE9F601D50C85B00684C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F5B7821D557B4200284740 /* addViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				E1EE9F3E1D50C85B00684C27 /* AppDelegate.swift */,
 				E1EE9F401D50C85B00684C27 /* ViewController.swift */,
 				E1EE9F421D50C85B00684C27 /* Main.storyboard */,
+				E1F5B7821D557B4200284740 /* addViewController.swift */,
+				E1EBE0D11D535BD800CF8381 /* memoDetailTableViewController.swift */,
 				E1EE9F451D50C85B00684C27 /* Assets.xcassets */,
 				E1EE9F471D50C85B00684C27 /* LaunchScreen.storyboard */,
 				E1EE9F4A1D50C85B00684C27 /* Info.plist */,
@@ -196,6 +202,7 @@
 				TargetAttributes = {
 					E1EE9F3A1D50C85B00684C27 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EG734K7EL3;
 					};
 					E1EE9F4E1D50C85B00684C27 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -261,6 +268,8 @@
 			files = (
 				E1EE9F411D50C85B00684C27 /* ViewController.swift in Sources */,
 				E1EE9F3F1D50C85B00684C27 /* AppDelegate.swift in Sources */,
+				E1EBE0D21D535BD800CF8381 /* memoDetailTableViewController.swift in Sources */,
+				E1F5B7831D557B4200284740 /* addViewController.swift in Sources */,
 				E1EB82031D521DDC009C3872 /* memolist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,10 +412,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = memo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Amy.zyy.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -414,10 +427,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = memo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Amy.zyy.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

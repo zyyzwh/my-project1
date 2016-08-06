@@ -19,19 +19,28 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         // Do any additional setup after loading the view, typically from a nib.
         
         let memo1=memolist(content: "你去哪")
+        memo1.description="IKON是YG Entertainment于2015年9月15日推出的男子演唱组合，由B.I（金韩彬）、金振焕、BOBBY（金知元）、宋                   尹亨、具晙会、金东爀、郑粲右7名成员组成。2014年9月11日，出演YG Entertainment出道生存节目《MIX & MATCH》[1]  。2015年11月2日，发布首张正规专辑《WELCOME BACK》[2]  。2016年1月13日，计划于日本出道[3]  ，同年1月获得第30届韩国金唱片音源新人赏奖[4]  。"
+        
         let memo2=memolist(content: "我去哪")
+        memo2.description="2013年8月，成员金振焕、宋允亨、金知元、金韩彬、具俊会、金东赫作为Team B参加YG Entertainment出道生存节目《WIN:WHO IS NEXT》与Team A竞争[9]  ，但最后Team A获得胜利[10]  。"
+        
         let memo3=memolist(content: "他去哪")
+        memo3.description="2014年9月，在《WIN:WHO IS NEXT》组成的Team B与梁洪硕、郑粲右、郑镇馨参加YG Entertainment出道生存节目《MIX & MATCH》，最后Team B和郑粲右胜出比赛，并成为iKON成员[11]  "
         
         self.memoList.append(memo1)
         self.memoList.append(memo2)
         self.memoList.append(memo3)
         
+//        self.everycell.estimatedRowHeight=80
+//        self.everycell.rowHeight=UITableViewAutomaticDimension         //对每一个下一页的cell的宽高
+        
     }
 
+    @IBOutlet weak var everycell: UITableView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
+    }  // 使你的我的他的都能分别跳转不同内容，在第一个界面的tableView拖拽过来的 outlet
 
     
     
@@ -49,11 +58,29 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         //cell.textLabel!.text=self.contents[indexPath.row] //调用contents数组里的内容 ，用return self.contents.count 来从第一个开始遍历，然后依次输出
        let memory=self.memoList[indexPath.row]
         cell.textLabel!.text=memory.content
-        cell.detailTextLabel!.text=memory.time.description
+        cell.detailTextLabel!.text=memory.time.descriptionWithLocale(NSLocale.currentLocale())
+        // 获取当地时间，所以不在addViewController中对 “let memodate=self.date.date”进行修改，获取的值类型是String，所以在描述“description”页面进行转换，存的是UTC时间，但显示的是当前地区时间
+        //   NSLocale.currentLocale() 是表示时区的
         return cell
         
     }
     
+    
+    //8.4 新加代码 页面跳转至 下一个页面，显示memoList[0]里边的具体内容   进行界面跳转就用segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier=="showdetail"{
+        let destination=segue.destinationViewController as! memoDetailTableViewController
+      // destination.memo=self.memoList[0]       //每一个你我他都显示同样内容
+         destination.memo=self.memoList[self.everycell.indexPathForSelectedRow!.row]       //每一个跳转页面都有自己单独的内容  与 @IBOutlet weak var everycell: UITableView!相关联
+        }
+    }
+    
+    @IBAction func unwindsegue(segue: UIStoryboardSegue){                  //跳转至“＋”链接的页面后 对退出进行设置 在“＋”页面中的“Exid”后触发的函数
+        
+        let addViewCongtroller = segue.sourceViewController as! addViewController  //获取“＋”页面的 “提交” 后的信息
+        let newmemo=addViewCongtroller.newmemo
+        self.memoList.append(newmemo)
+        self.everycell.reloadData()   }
     
 }
 

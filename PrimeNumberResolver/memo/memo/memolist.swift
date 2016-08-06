@@ -8,11 +8,13 @@
 
 import Foundation
 class memolist{
-    var content: String = ""                                   //或者 var content: String!
-
+    var content: String = " "                                   //或者 var content: String!
+    var description: String=" "
+    
     var priority: Int = 0
     var time: NSDate=NSDate()
-    init (content: String ){                                  //初始化函数
-    self.content=content
+    init (content: String,date:NSDate=NSDate() ){              //初始化函数
+        self.time=date                                        //8.6 新加代码，对时间初始化
+        self.content=content
     }
 }
