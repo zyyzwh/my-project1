@@ -7,14 +7,19 @@
 //
 
 import Foundation
-class memolist{
-    var content: String = " "                                   //或者 var content: String!
-    var description: String=" "
+import RealmSwift
+
+class memolist:Object{
+   dynamic var content: String = " "                                   //或者 var content: String!
     
-    var priority: Int = 0
-    var time: NSDate=NSDate()
-    init (content: String,date:NSDate=NSDate() ){              //初始化函数
-        self.time=date                                        //8.6 新加代码，对时间初始化
-        self.content=content
-    }
+   //dynamic var description: String=" "
+   dynamic var memodescription: String=" "                             //重新命名
+
+   dynamic  var priority: Int = 0
+    
+   dynamic var time: NSDate=NSDate()
+//    init (content: String,date:NSDate=NSDate() ){              //初始化函数
+//        self.time=date                                        //8.6 新加代码，对时间初始化
+//        self.content=content
+//    }
 }

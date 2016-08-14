@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PinterestLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="exh-TU-j2k">
+                                <rect key="frame" x="0.0" y="0.0" width="314" height="568"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QuW-wk-WRq">
+                                    <size key="itemSize" width="117" height="118"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell" id="0fB-JV-fKT" customClass="MyCell" customModule="PinterestLayout" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="117" height="118"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="117" height="118"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YMc-7Q-gKn">
+                                                    <rect key="frame" x="30" y="8" width="61" height="62"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="56" id="gbw-0L-zxO"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="川菜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xnr-PZ-2Bb">
+                                                    <rect key="frame" x="41" y="82" width="34" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="YMc-7Q-gKn" firstAttribute="centerX" secondItem="0fB-JV-fKT" secondAttribute="centerX" id="5lw-mG-JUU"/>
+                                            <constraint firstItem="Xnr-PZ-2Bb" firstAttribute="leading" secondItem="0fB-JV-fKT" secondAttribute="leadingMargin" constant="32" id="X30-Sl-h31"/>
+                                            <constraint firstItem="YMc-7Q-gKn" firstAttribute="leading" secondItem="0fB-JV-fKT" secondAttribute="leadingMargin" constant="22" id="YPF-rB-PaP"/>
+                                            <constraint firstItem="Xnr-PZ-2Bb" firstAttribute="top" secondItem="YMc-7Q-gKn" secondAttribute="bottom" constant="14" id="keW-d0-poK"/>
+                                            <constraint firstItem="YMc-7Q-gKn" firstAttribute="top" secondItem="0fB-JV-fKT" secondAttribute="topMargin" id="wY0-mU-CzC"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="foodImage" destination="YMc-7Q-gKn" id="cbx-i4-TsS"/>
+                                            <outlet property="foodName" destination="Xnr-PZ-2Bb" id="X17-pI-0or"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="LXW-kn-fGg"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="exh-TU-j2k" secondAttribute="trailing" constant="-10" id="49s-AC-6jP"/>
+                            <constraint firstItem="exh-TU-j2k" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CbS-bg-SJE"/>
+                            <constraint firstItem="exh-TU-j2k" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="XbI-jB-Mnv"/>
+                            <constraint firstItem="exh-TU-j2k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hEY-YT-lJZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cv" destination="exh-TU-j2k" id="jVx-dK-DKf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="277"/>
+        </scene>
+    </scenes>
+</document>

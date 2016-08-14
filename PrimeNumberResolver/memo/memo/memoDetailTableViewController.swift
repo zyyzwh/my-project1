@@ -23,8 +23,10 @@ class memoDetailTableViewController: UITableViewController {
         
         self.detailLabel.text=self.memo.description  //新加代码
         self.tableView.estimatedRowHeight=80
-        self.tableView.rowHeight=UITableViewAutomaticDimension         //对每一个下一页的cell的宽高 根据具体内容来自动判断宽
-    }
+        
+        //对每一个下一页的cell的宽高 根据具体内容来自动判断宽
+        self.tableView.rowHeight=UITableViewAutomaticDimension
+     }
     
    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
